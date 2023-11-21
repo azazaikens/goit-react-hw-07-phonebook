@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export function FormContacts({ handleAddContact }) {
-  const [formData, setFormData] = useState({ name: '', number: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '' });
 
   const handleChange = ev => {
     const { name, value } = ev.target;
@@ -14,7 +14,7 @@ export function FormContacts({ handleAddContact }) {
   const handleSubmit = ev => {
     ev.preventDefault();
     handleAddContact(formData);
-    setFormData({ name: '', number: '' });
+    setFormData({ name: '', phone: '' });
   };
 
   return (
@@ -50,15 +50,15 @@ export function FormContacts({ handleAddContact }) {
           display: 'flex',
           gap: '20px',
         }}
-        htmlFor="number"
+        htmlFor="phone"
       >
         Number:
         <input
           type="tel"
-          name="number"
+          name="phone"
           onChange={handleChange}
           required
-          value={formData.number}
+          value={formData.phone}
         />
       </label>
       <button

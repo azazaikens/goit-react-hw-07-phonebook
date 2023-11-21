@@ -10,7 +10,7 @@ export const ListContacts = ({ contacts, deleteContact }) => {
         gap: '10px',
       }}
     >
-      {contacts.map(({ id, name, number }) => (
+      {contacts.map(({ id, name, phone }) => (
         <li
           style={{
             display: 'flex',
@@ -19,7 +19,7 @@ export const ListContacts = ({ contacts, deleteContact }) => {
           }}
           key={nanoid()}
         >
-          {name} : {number}
+          {name} : {phone}
           <button type="button" onClick={() => deleteContact(id)}>
             Delete
           </button>
